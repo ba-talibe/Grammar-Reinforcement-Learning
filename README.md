@@ -91,22 +91,32 @@ The optional MCTS and Gramformer extensions may be added after P2/P3 has been re
 
 ```text
 data/       Generated graph datasets and reference counts
-notebooks/  Exploratory notebooks, including PDA.ipynb
+notebooks/  Exploratory notebooks for PDA generation and graph generators
 scripts/    Intended location for generation, counting, search, and evaluation code
 ```
 
-## Running the notebook
+### Notebooks
 
-The current notebook can be opened with Jupyter:
+- `notebooks/PDA.ipynb`: PDA/CFG derivation examples and the grammar reproduction.
+- `notebooks/graph generator method exploration.ipynb`: examples of NetworkX Classic and Random graph generators, with each graph visualized using `nx.draw`.
+- `scripts/graphe_embedding.ipynb`: work on node-level embeddings based on path and cycle counting, including the $l$-path matrix $P^{(l)}$ and the $l$-cycle matrix $C^{(l)}$.
+
+## Running the notebooks
+
+The notebooks can be opened with Jupyter:
 
 ```bash
 jupyter notebook notebooks/PDA.ipynb
+jupyter notebook "notebooks/graph generator method exploration.ipynb"
+jupyter notebook scripts/graphe_embedding.ipynb
 ```
 
-It demonstrates PDA generation and derivations for:
+The PDA notebook demonstrates:
 
 - a randomly generated formula;
 - `(J ⊙ (AA))`, from the grammar example in the paper.
+
+The graph generator notebook provides reproducible examples of NetworkX graph families and displays the generated graphs. The embedding notebook documents the distinction between walks counted by matrix powers and exact simple paths or cycles.
 
 The repository does not yet require a shared package manifest or a fixed Python environment.
 
